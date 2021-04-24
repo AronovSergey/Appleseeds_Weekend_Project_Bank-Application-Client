@@ -1,6 +1,8 @@
 import React from "react";
 
 const ServerResponse = ({ response }) => {
+	if (!response.trasnaction)
+		return <h1>Error: Something went wrong. Try Again</h1>;
 	return (
 		<div className="flex">
 			{response.trasnaction && (
