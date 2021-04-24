@@ -28,7 +28,7 @@ const AccountOption = () => {
 		try {
 			(async () => {
 				const { data } = await axios.get(
-					"http://localhost:8080/api/bank/account/"
+					"https://bank-server-sergey-aronov.herokuapp.com/api/bank/account/"
 				);
 				setState({
 					...state,
@@ -43,7 +43,7 @@ const AccountOption = () => {
 
 	const onSubmitClick = async () => {
 		try {
-			let url = `http://localhost:8080/api/bank/trasnactions/${state.type}/${state.from}`;
+			let url = `https://bank-server-sergey-aronov.herokuapp.com/api/bank/trasnactions/${state.type}/${state.from}`;
 			if (state.type === "transfer") url += `/${state.to}`;
 			const { data } = await axios.put(url, { amount: state.amount });
 			setState({
